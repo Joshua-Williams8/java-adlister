@@ -49,5 +49,6 @@
   </c:choose>
 <%--  http://localhost:8080/jstl.jsp--%>
 <%--  --%>
+
 </body>
 </html>

@@ -5,6 +5,10 @@
   Time: 9:31 AM
   To change this template use File | Settings | File Templates.
 --%>
+
+<%--JSP stands for Java Server Pages.--%>
+<%--JSTL stands for the JSP Standard Tag Library.--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--Directive tags are symbolized with a <%@ directive attributes %> --%>
 <%--The @ sign means it's a directive--%>
@@ -25,7 +29,7 @@
 <html>
 <head>
   <title>JSP tags</title>
-  <%@include file="partials/head.jsp"%>
+  <%@include file="java-adlister/src/main/webapp/WEB-INF/partials/head.jsp"%>
 <%--  This is really useful because if you want to reuse the same asset you can just change the include file, instead of editing it on each page individually.--%>
 </head>
 <body>
@@ -33,7 +37,7 @@
 <h2>Local count <%= localCount%></h2>
 <h2>Instance count <%= instanceCount%></h2>
 
-<%@ include file="partials/jsp-include-park.jsp"%>
-<%@ include file="partials/bootstrap-script.jsp"%>
+<%@ include file="java-adlister/src/main/webapp/WEB-INF/partials/jsp-include-park.jsp"%>
+<%@ include file="java-adlister/src/main/webapp/WEB-INF/partials/bootstrap-script.jsp"%>
 </body>
 </html>
