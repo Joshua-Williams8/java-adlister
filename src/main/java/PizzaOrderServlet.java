@@ -7,16 +7,16 @@ import java.io.IOException;
 
 
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizzaOrder")
-public class PizzaOrder extends HttpServlet {
+public class PizzaOrderServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-//    request.getRequestDispatcher("/pizzaOrder.jsp").forward(request,response);
-    req.getRequestDispatcher("/pizzaOrder.jsp").forward(req, resp);
+//    request.getRequestDispatcher("/pizza-Order.jsp").forward(request,response);
+    req.getRequestDispatcher("/pizza-Order.jsp").forward(req, resp);
   }
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-    request.getRequestDispatcher("/pizzaOrder.jsp").forward(request, response);
+    request.getRequestDispatcher("/pizza-Order.jsp").forward(request, response);
 
 //    Make these select inputs
 
@@ -31,8 +31,6 @@ public class PizzaOrder extends HttpServlet {
 
 //  Make these topping checkboxes ? Should this be an array? or a true or false for each topping?
     String[] toppings = request.getParameterValues("toppings");
-
-
 
     System.out.println("Toppings below: ");
     for (String topping : toppings) {
