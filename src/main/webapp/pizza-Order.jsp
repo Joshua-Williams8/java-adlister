@@ -9,14 +9,17 @@
 
 <html>
 <head>
+<%--  Below just includes bootstrap, and a navbar and makes our title for the tab.--%>
   <jsp:include page="partials/head.jsp">
     <jsp:param name="title" value="ORDER OUR PIZZA!"/>
   </jsp:include>
 </head>
 <body>
 <h1>Pizza!</h1>
+<%--The action is the link this page forwards to, we are using the servlet's url so we can send the data there.--%>
 <form method="POST" action="pizzaOrder">
   <%-- Select for Crust --%>
+<%-- The name attribute is what is posted with options are selected --%>
   <div>
     <h4>What kind of Crust do you want?</h4>
     <label for="crustType">Please select from the dropdown.</label>
@@ -38,6 +41,7 @@
   </div>
   <div>
     <h4>Please select your toppings.</h4>
+<%--  For below The post is an array, from checkboxes when multiple checkboxes share a name. and the values checked are pushed into the array.  --%>
     <div>
       <label for="peperoni"><input type="checkbox" id="peperoni" name="toppings" value="peperoni" >Peperoni</label>
       <label for="sausage"><input type="checkbox" id="sausage" name="toppings" value="sausage" >Sausage</label>
