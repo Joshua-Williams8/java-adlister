@@ -16,7 +16,7 @@
   </style>
 </head>
 <body>
-<form method="post" action="pickColor">
+<form method="get" action="pickColor">
   <h2>You picked ${param.chosenColor}</h2>
   <button type="submit">Click here to go back.</button>
 

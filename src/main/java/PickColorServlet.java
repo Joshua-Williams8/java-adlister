@@ -18,7 +18,10 @@ public class PickColorServlet extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-    request.getRequestDispatcher("/pickColor.jsp").forward(request, response);
+    request.setAttribute("chosenColor","chosenColor" );
+    request.getRequestDispatcher("/viewColor").forward(request, response);
+
+//    request.getRequestDispatcher("/pickColor.jsp").forward(request, response);
 
 
   }

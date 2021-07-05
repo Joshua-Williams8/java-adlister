@@ -13,7 +13,7 @@
   </jsp:include>
 </head>
 <body>
-<form method="POST" action="viewColor">
+<form method="POST" action="pickColor">
 
   <div class="form-group">
     <label for="chosenColor">Please enter a color.</label>
