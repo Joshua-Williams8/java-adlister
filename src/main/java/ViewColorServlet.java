@@ -22,13 +22,10 @@ public class ViewColorServlet extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
+//
     String color = request.getParameter("chosenColor");
-
+//
     request.setAttribute("chosenColor",color);
-
-
-//    String color = request.getParameter("chosenColor");
 
     System.out.printf("%s was entered.\n", color);
     request.getRequestDispatcher("/viewColor.jsp").forward(request, response);

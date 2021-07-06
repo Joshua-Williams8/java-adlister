@@ -20,7 +20,7 @@
 </head>
 <body>
 <form method="post" action="guess">
-  <input type="text" disabled hidden value="${param.ranNum}">
+<%--  <input type="text" disabled hidden value="${param.ranNum}">--%>
   <label for="guessNum">Guess which number I picked, from 1 2 or 3.</label>
   <input type="text" name="guessNum" id="guessNum">
   <button type="submit">SEND IT</button>

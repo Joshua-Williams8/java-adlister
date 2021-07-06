@@ -24,7 +24,7 @@ public class GuessServlet extends HttpServlet {
     int guessNum = Integer.parseInt(request.getParameter("guessNum"));
 
 
-    if (guessNum == 0) {
+    if (guessNum != 1 && guessNum != 2 && guessNum != 3 ) {
       request.getRequestDispatcher("/guess.jsp").forward(request, response);
     } else {
 
