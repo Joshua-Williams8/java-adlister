@@ -8,8 +8,6 @@ public class Album implements Serializable {
   private int releaseDate;
   private double sales;
   private String genre;
-  private Date year;
-
 
   public Album(){
 

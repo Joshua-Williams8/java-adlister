@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BeanTest {
 
@@ -27,6 +28,10 @@ public class BeanTest {
       System.out.println("Said");
       System.out.println(quote.getContent());
       System.out.println("-----");
+
+      Date yearTest = new Date(1998,0,0);
+      System.out.println(yearTest.getYear());
+
 
     }
 
