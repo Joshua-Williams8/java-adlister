@@ -39,4 +39,9 @@ public class ListAdsDao implements Ads {
         ));
         return ads;
     }
+
+  public void insert(Ad ad) {
+    this.ads.add(ad);
+  }
+//  Mirrors list adds DAO
 }

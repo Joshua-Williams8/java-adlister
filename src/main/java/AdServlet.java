@@ -20,6 +20,19 @@ public class AdServlet extends HttpServlet {
 
 
   }
+  @Override
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    Ads adsDao = DaoFactory.getAdsDao();
+    List<Ad> ads = adsDao.all();
+
+    request.setAttribute("ads",ads);
+    request.getRequestDispatcher("/ads/index.jsp").forward(request,response);
+
+
+
+  }
+
 
 
 }
