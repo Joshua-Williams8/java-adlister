@@ -4,8 +4,8 @@ import com.codeup.adlister.models.Ad;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class ListAdsDao implements Ads {
+//Shouldn't be messing with this?
+public class ListAdsDao {
     private List<Ad> ads;
 
     public List<Ad> all() {
