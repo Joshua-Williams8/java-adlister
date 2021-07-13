@@ -6,10 +6,10 @@ class Config {
   }
 
   public String getUser() {
-    return "DB_ADMIN_HERE";
+    return "adlister_admin";
   }
 
   public String getPassword() {
-    return "PASSWORDHERE";
+    return "codeup";
   }
 }
