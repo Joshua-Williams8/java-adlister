@@ -8,8 +8,11 @@ public class Password {
     public static String hash(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt(ROUNDS));
     }
+//    Above turns the password into a hash using Bcrypt
 
     public static boolean check(String password, String hash) {
         return BCrypt.checkpw(password, hash);
     }
+//    Above allows us to CHECK if a password could return the same hash (basically checking the hash stored against the password presented?
+
 }

@@ -12,5 +12,12 @@
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
 
+    <form method="GET" action="/ads/create">
+      <button type="submit">Create New Ad</button>
+    </form>
+    <form method ="GET">
+      <button type="submit">View add listings</button>
+    </form>
+
 </body>
 </html>
