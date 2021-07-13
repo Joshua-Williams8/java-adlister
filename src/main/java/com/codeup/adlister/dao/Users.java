@@ -7,5 +7,6 @@ import java.util.List;
 public interface Users {
     List<User> findByUsername(String username);
     Long insert(User user);
+    User findByUsernameNoList(String username);
 
 }

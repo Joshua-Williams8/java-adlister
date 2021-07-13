@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
@@ -42,21 +43,36 @@ public class MySQLUsersDao implements Users{
   }
 
 
+//  public User findByUsername(String username) {
+//    String sql = "SELECT * FROM users WHERE username LIKE ?";
+//    String searchWildCards = "%" + username + "%";
+//    PreparedStatement stmt = null;
+//    try{
+//      stmt = connection.prepareStatement(sql);
+//      stmt.setString(1,searchWildCards);
+//      ResultSet rs = stmt.executeQuery(sql);
+//
+//      return createUsersFromResults(rs);
+//
+//    } catch (SQLException e) {
+//      throw new RuntimeException("Error retrieving all ads.", e);
+//    }
+//  }
+
+
 
   @Override
   public List<User> findByUsername(String username) {
-    String sql = "SELECT * FROM users WHERE username LIKE ?";
-    String searchWildCards = "%" + username + "%";
+    String sql = "SELECT * FROM users WHERE username = '" + username + "';";
     PreparedStatement stmt = null;
     try{
       stmt = connection.prepareStatement(sql);
-      stmt.setString(1,searchWildCards);
       ResultSet rs = stmt.executeQuery(sql);
 
       return createUsersFromResults(rs);
 
     } catch (SQLException e) {
-      throw new RuntimeException("Error retrieving all ads.", e);
+      throw new RuntimeException("Error retrieving all users.", e);
     }
   }
 
@@ -76,6 +92,31 @@ public class MySQLUsersDao implements Users{
       return rs.getLong(1);
     } catch (SQLException e) {
       throw new RuntimeException("Error creating a new User.", e);
+    }
+  }
+
+  public User getOne(String username) {
+    String sql = "SELECT * FROM users WHERE username = ?;";
+    try {
+      PreparedStatement stmt = connection.prepareStatement(sql);
+      stmt.setString(1,username);
+      ResultSet rs = stmt.getGeneratedKeys();
+      rs.next();
+      return extractUser(rs);
+    } catch (SQLException e) {
+      throw new RuntimeException("Error creating finding User.", e);
+    }
+  }
+
+  public User findByUsernameNoList(String username) {
+    String sql = "SELECT * FROM users WHERE username = '" + username + "';";
+    PreparedStatement stmt = null;
+    try{
+      stmt = connection.prepareStatement(sql);
+      ResultSet rs = stmt.executeQuery(sql);
+      return new User(extractUser(rs).getUsername(),extractUser(rs).getPassword(),extractUser(rs).getEmail());
+    } catch (SQLException e) {
+      throw new RuntimeException("Error retrieving a user.", e);
     }
   }
 }
